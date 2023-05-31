@@ -1,7 +1,7 @@
 create-project: # Create project
 	mkdir client
 	@make up
-	docker compose exec node sh -c "npx --yes create-react-app . --template typescript"
+	docker compose exec node sh -c "npx create-next-app@latest"
 set-up: # Set up app after git clone
 	@make up
 	@make install
@@ -15,11 +15,11 @@ down:
 	docker compose down
 start:
 	@make up
-	@make npm-start
+	@make npm-dev
 
 
 # Commands for development
-npm-start:
-	docker compose exec node npm start
+npm-dev:
+	docker compose exec node npm run dev
 install:
 	docker compose exec node npm install ${name}

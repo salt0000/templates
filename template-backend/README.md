@@ -1,5 +1,5 @@
 # Overview
-template project
+template-backend project
 
 
 # Environment

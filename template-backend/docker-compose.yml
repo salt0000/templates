@@ -31,7 +31,10 @@ services:
     volumes:
       - type: volume
         source: mysql
-        target: /var/lib/mysql 
+        target: /var/lib/mysql
+      - type: bind
+        source: ./docker/mysql/initdb.d
+        target: /docker-entrypoint-initdb.d
     environment:
       - MYSQL_DATABASE=template
       - MYSQL_ROOT_PASSWORD=secret
@@ -47,10 +50,10 @@ services:
       - PMA_USER=root
       - PMA_PASSWORD=secret
     
-  # mailhog:
-  #   image: mailhog/mailhog
-  #   ports: 
-  #     - 8025:8025
+  mailhog:
+    image: mailhog/mailhog
+    ports: 
+      - 8025:8025
 
 volumes:
   mysql:

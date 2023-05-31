@@ -1,6 +1,5 @@
 # Overview
-template project
-
+template-design project
 
 # Environment
 ### Requirements
